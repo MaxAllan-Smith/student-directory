@@ -42,6 +42,7 @@ end
 def print_menu
   puts "1: Input the students"
   puts "2: Show the students"
+  puts "3: Save student to file"
   puts "9: Exit"
 end
 
@@ -57,6 +58,8 @@ def process(selection)
     @students = input_students
   when "2"
     show_students
+  when "3"
+    save_students
   when "9"
     exit
   else
@@ -73,6 +76,8 @@ def save_students
     file.puts csv_line
   end
   file.close
+
+  puts "Students saved to file 'students.csv' successfully"
 end
 
 def interactive_menu
